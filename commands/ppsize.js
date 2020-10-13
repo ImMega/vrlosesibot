@@ -6,7 +6,7 @@ module.exports = {
         if (!target){
             message.reply('ti imas ' + Math.floor(Math.random() * 50) + 'inch velikog!');
         } else if (target){
-            message.channel.send(`${target} ima ` + Math.floor(Math.random() * 50) + 'inch velikog!');
+            message.channel.send(`${target} ima` + " " + Math.floor(Math.random() * 50) + 'inch velikog!');
         }
     }
 }
