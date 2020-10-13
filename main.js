@@ -83,7 +83,7 @@ client.on("message", message =>{
             .setFooter(`Da, to su te komande!`)
             .setTimestamp()
         try {
-            message.channel.sendEmbed(helpEmbed);
+            message.author.sendEmbed(helpEmbed);
         } catch {
             message.reply(`Nesto ne radi`)
         }
