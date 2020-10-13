@@ -18,7 +18,6 @@ for (const file of commandFiles){
 
 client.once("ready", () => {
     console.log("vRlO sEsi Lik is online");
-    
 });
 
 client.on("message", message =>{
