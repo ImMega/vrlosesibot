@@ -18,6 +18,7 @@ for (const file of commandFiles){
 
 client.once("ready", () => {
     console.log("vRlO sEsi Lik is online");
+    bot.user.setActivity(`prefix "-"`, { type: `LISTENING`});
 });
 
 client.on("message", message =>{
