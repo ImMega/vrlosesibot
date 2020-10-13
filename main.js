@@ -72,23 +72,8 @@ client.on("message", message =>{
           client.commands.get("simp").execute(message, args);
       } else if(command === "ppsize"){
           client.commands.get("ppsize").execute(message, args);
-      } else if(command === "help"){
-        const helpEmbed = new Discord.RichEmbed()
-            .setColor(0x6509ed)
-            .setTitle(`Podrzane komande`)
-            .setDescription(`jeej`)
-            .setAuthor(message.author.username)
-            .setField(`To su te komande!`)
-            .setThumbnail(message.author.avatarURL)
-            .setFooter(`Da, to su te komande!`)
-            .setTimestamp()
-        try {
-            message.author.sendEmbed(helpEmbed);
-        } catch {
-            message.reply(`Nesto ne radi`)
-        }
-    }
-});
+      }
+    });
 
 
 
