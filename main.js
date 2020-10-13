@@ -76,7 +76,7 @@ client.on("message", message =>{
         const helpEmbed = new Discord.RichEmbed()
             .setColor(0x6509ed)
             .setTitle(`Podrzane komande`)
-            .setDescription(`${prefix} ` + commands.map(c => c.name).join(`\n${prefix} `))
+            .setDescription(`${prefix} ` + commandFiles.map(c => c.name).join(`\n${prefix} `))
             .setAuthor(message.author.username)
             .setField(`To su te komande!`)
             .setThumbnail(message.author.avatarURL)
