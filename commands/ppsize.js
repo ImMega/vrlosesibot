@@ -9,7 +9,7 @@ module.exports = {
         if (!target){
             message.reply('ti imas ' + `${ppsize}` + 'inch velikog!');
         } else if (target){
-            message.channel.send(`${target}` + "ima " + `${ppsize}` + 'inch velikog!');
+            message.channel.send(`${target}` + " ima " + `${ppsize}` + 'inch velikog!');
         }
     }
 }
