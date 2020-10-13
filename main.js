@@ -20,6 +20,10 @@ client.once("ready", () => {
     console.log("vRlO sEsi Lik is online");
 });
 
+client.on("ready", () => {
+    client.user.setActivity(`prefix "-"`, { type: `LISTENING`});
+});
+
 client.on("message", message =>{
      if (message.content === "jebem ti mater") {
           message.reply("i ja tebi isto!");
