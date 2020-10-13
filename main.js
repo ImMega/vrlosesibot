@@ -21,7 +21,6 @@ client.once("ready", () => {
 });
 
 client.on("ready", () => {
-    client.user.setActivity(`prefix "-"`, { type: `LISTENING`});
     client.user.setActivity(`PREFIX -`, { type: `LISTENING`});
 });
 
