@@ -6,6 +6,8 @@ const prefix = "-";
 
 const fs = require("fs");
 
+const Embed = new Discord.MessageEmbed(); 
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync ("./commands/").filter(file => file.endsWith(".js"));
@@ -75,7 +77,7 @@ client.on("message", message =>{
       } else if(command === "gay"){
         client.commands.get("gay").execute(message, args);
       } else if(command === "help"){
-          const helpEmbed = new Discord.MessageEmbed()
+          const helpEmbed = new Discord.RichEmbed()
             .setColor(0x6509ed)
             .setTitle(`Jej`)
             .setDescription(`jejej`)
