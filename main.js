@@ -77,20 +77,25 @@ client.on("message", message =>{
       } else if(command === "gay"){
         client.commands.get("gay").execute(message, args);
       } else if(command === "help"){
-          const helpEmbed = new Discord.RichEmbed()
+          const helpEmbed = new Discord.MessageEmbed()
             .setColor(0x6509ed)
-            .setTitle(`Jej`)
-            .setDescription(`jejej`)
-            .setAuthor(message.author.username)
-            .addField(`Jej jej jej!`)
-            .setThumbnail(message.author.avatarURL)
-            .setFooter(`jejejejej`)
+            .setTitle(`${client.user.username}` + " Commands List")
+            .setDescription("**Bot je jos u developmentu doci ce jos komandi**")
+            .setAuthor(client.user.username)
+            .addField("--------------------------------------------", "**Komande sa prefixom -**")
+            .addField(`-lmao`, `lmao`)
+            .addField(`-picka`, `Picka materina`)
+            .addField(`-sus`, "Ko je sus?")
+            .addField("-simp <target>", "Koliko si posto simp (ili neko drugi)")
+            .addField("-ppsize <target>", "Koliki ti imas pp (ili neko drugi)")
+            .addField("-gay <target>", "Koliko si posto gay (ili neko drugi)")
+            .addField("--------------------------------------------", "**Komande bez prefixa**")
+            .addField("So you are crewmate? Name every task", "Salje sve taskove kako bi dokazao da je crewmate")
+            .addField("jebem ti mater", "Jebes mu mater pa onda on tebi")
+            .setThumbnail(message.author.displayAvatarURL)
+            .setFooter(`${client.user.username}` + " Commands")
             .setTimestamp()
-        try {
-            message.author.sendEmbed(helpEmbed);
-        } catch {
-            message.reply(`nej.`);
-        }
+        message.channel.send(helpEmbed);
       }
     });
 
