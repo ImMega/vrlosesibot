@@ -74,7 +74,22 @@ client.on("message", message =>{
           client.commands.get("ppsize").execute(message, args);
       } else if(command === "gay"){
         client.commands.get("gay").execute(message, args);
-    }
+      } else if(command === "help"){
+          const helpEmbed = new Discord.MessageEmbed()
+            .setColor(0x6509ed)
+            .setTitle(`Jej`)
+            .setDescription(`jejej`)
+            .setAuthor(message.author.username)
+            .addField(`Jej jej jej!`)
+            .setThumbnail(message.author.avatarURL)
+            .setFooter(`jejejejej`)
+            .setTimestamp()
+        try {
+            message.author.sendEmbed(helpEmbed);
+        } catch {
+            message.reply(`nej.`);
+        }
+      }
     });
 
 
