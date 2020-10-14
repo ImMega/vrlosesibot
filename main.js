@@ -72,7 +72,9 @@ client.on("message", message =>{
           client.commands.get("simp").execute(message, args);
       } else if(command === "ppsize"){
           client.commands.get("ppsize").execute(message, args);
-      }
+      } else if(command === "gay"){
+        client.commands.get("gay").execute(message, args);
+    }
     });
 
 
