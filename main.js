@@ -21,11 +21,11 @@ client.once("ready", () => {
 });
 
 client.on("ready", () => {
-    client.user.setActivity(`PREFIX -`, { type: `LISTENING`});
+    client.user.setActivity(`-help`, { type: `LISTENING`});
 });
 
 client.on("message", message =>{
-     if (message.content === "jebem ti mater") {
+     if (message.content === "Jebem ti mater") {
           message.reply("i ja tebi isto!");
      }
 
@@ -87,13 +87,25 @@ client.on("message", message =>{
                 .addField("-simp <target>", "Koliko si posto simp (ili neko drugi)")
                 .addField("-ppsize <target>", "Koliki ti imas pp (ili neko drugi)")
                 .addField("-gay <target>", "Koliko si posto gay (ili neko drugi)")
+                .addField("-kill <target>", "Ubijes nekoga")
                 .addField("--------------------------------------------", "**Komande bez prefixa**")
                 .addField("So you are crewmate? Name every task", "Salje sve taskove kako bi dokazao da je crewmate")
-                .addField("jebem ti mater", "Jebes mu mater pa onda on tebi")
+                .addField("Jebem ti mater", "Jebes mu mater pa onda on tebi")
                 .setThumbnail(message.author.displayAvatarURL)
                 .setFooter(`${client.user.username}` + " Commands")
                 .setTimestamp()
             message.channel.send(helpEmbed);
+      } else if(command === "kill"){
+          const target = message.mentions.users.first()
+          const author = message.author
+
+          if (target === author){
+            message.channel.send(`${author}` + " se ubio")
+          } else if (target){
+              message.channel.send(`${author}` + " je ubio " + `${target}`)
+          } else if (!target){
+              message.reply("koga ces ubiti?")
+          } 
       }
     });
 
