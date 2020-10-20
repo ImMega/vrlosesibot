@@ -73,10 +73,10 @@ client.on("message", message =>{
       } else if(command === "ppsize"){
           client.commands.get("ppsize").execute(message, args);
       } else if(command === "gay"){
-        client.commands.get("gay").execute(message, args);
+          client.commands.get("gay").execute(message, args);
       } else if(command === "help"){
             const helpEmbed = new Discord.MessageEmbed()
-                .setColor(0x6509ed)
+                .setColor(0x4bf542)
                 .setTitle(`${client.user.username}` + " Commands List")
                 .setDescription("**Bot je jos u developmentu doci ce jos komandi**")
                 .setAuthor(client.user.username)
@@ -88,6 +88,7 @@ client.on("message", message =>{
                 .addField("-ppsize <target>", "Koliki ti imas pp (ili neko drugi)")
                 .addField("-gay <target>", "Koliko si posto gay (ili neko drugi)")
                 .addField("-kill <target>", "Ubijes nekoga")
+                .addField("-yeet <target>", "Yeetas nekoga vjv u tri pm")
                 .addField("--------------------------------------------", "**Komande bez prefixa**")
                 .addField("So you are crewmate? Name every task", "Salje sve taskove kako bi dokazao da je crewmate")
                 .addField("Jebem ti mater", "Jebes mu mater pa onda on tebi")
@@ -96,16 +97,11 @@ client.on("message", message =>{
                 .setTimestamp()
             message.channel.send(helpEmbed);
       } else if(command === "kill"){
-          const target = message.mentions.users.first()
-          const author = message.author
-
-          if (target === author){
-            message.channel.send(`${author}` + " se ubio")
-          } else if (target){
-              message.channel.send(`${author}` + " je ubio " + `${target}`)
-          } else if (!target){
-              message.reply("koga ces ubiti?")
-          } 
+          client.commands.get("kill").execute(message, args);
+      } else if(command === "yeet"){
+          client.commands.get("yeet").execute(message, args);
+      } else if(command === "ping"){
+          client.commands.get("ping").execute(message, args);
       }
     });
 
