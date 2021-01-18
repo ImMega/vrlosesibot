@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 
-const prefix = "-";
+const prefix = ".";
 
 const fs = require("fs"); 
 
@@ -17,12 +17,12 @@ for (const file of commandFiles){
 
 
 client.once("ready", () => {
-    console.log("vRlO sEsi Lik is online");
+    console.log(`${client.user.username}` + " is online");
 });
 
-client.on("ready", () => {
-    client.user.setActivity(`-help`, { type: `LISTENING`});
-});
+//client.on("ready", () => {
+//    client.user.setActivity(`-help`, { type: `LISTENING`});
+//});
 
 client.on("message", message =>{
      if (message.content === "Jebem ti mater") {
@@ -102,7 +102,11 @@ client.on("message", message =>{
           client.commands.get("yeet").execute(message, args);
       } else if(command === "ping"){
           client.commands.get("ping").execute(message, args);
-      }
+      } else if(command === ("play")){
+          client.commands.get("play").execute(message, args);
+      } else if(command === ("leave")){
+        client.commands.get("leave").execute(message, args);
+    }
     });
 
 
